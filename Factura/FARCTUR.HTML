@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice - Company Name</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #b2cdd8;
+      padding: 40px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    
+    .factura-box {
+      width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: flex; 
+    }
+
+   
+    .col-izquierda {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    .header-logo {
+      background-color: #e5e5e5;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 15px;
+    }
+
+    .logo-img {
+      width: 100px;
+      height: auto;
+    }
+
+    .marca-info h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #000;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .marca-info p {
+      font-size: 12px;
+      color: #555;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .info-cliente {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      background-color: #fff;
+    }
+
+    .notas h3, .direccion h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .notas p, .direccion p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .direccion {
+      text-align: right;
+    }
+
+    
+    .tabla-productos {
+      background-color: #f2f2f2;
+      padding: 28px 40px;
+      flex-grow: 1;
+    }
+
+    .grid-izquierda {
+      display: grid;
+      grid-template-columns: 40px 1fr 100px;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+
+    .head-tabla {
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+
+    /* Totales (etiquetas) */
+    .pie-factura-izq {
+      display: flex;
+      justify-content: flex-end;
+      padding: 30px 40px;
+      background-color: #ffffff;
+    }
+
+    .etiquetas-totales {
+      text-align: right;
+      font-size: 15px;
+      line-height: 2;
+      color: #333;
+    }
+
+   
+    .col-derecha {
+      width: 30%;
+      background-color: #333a3d;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titulo-invoice {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -10%;
+      
+    }
+
+    .titulo-invoice h2 {
+      font-size: 32px;
+      letter-spacing: 8px;
+      font-weight: 300;
+    }
+
+    .detalles-meta {
+      padding: 30px;
+      text-align: center;
+      border-bottom: 1px solid #4a5154;
+    }
+
+    .meta-item { margin-bottom: 20px; }
+    .meta-item label {
+      display: block;
+      font-size: 11px;
+      color: #bbb;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .tabla-totales {
+      padding: 20px 30px;
+      flex-grow: 1;
+      margin-top: -20px;
+    }
+
+    .grid-derecha {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      padding: 12px 0;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .valores-finales {
+      background-color: #2b3134;
+      padding: 30px;
+      font-size: 15px;
+      line-height: 2;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="factura-box">
+    
+    <div class="col-izquierda">
+      <header class="header-logo">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/047/656/219/small_2x/abstract-logo-design-for-any-corporate-brand-business-company-vector.jpg" alt="Logo" class="logo-img">
+        <div class="marca-info">
+          <h1>COMPANY NAME</h1>
+          <p>BRANDING TAGLINE SPACE HERE</p>
+        </div>
+      </header>
+
+      <div class="info-cliente">
+        <div class="notas">
+          <h3>Additional notes</h3>
+          <p>Ut enim ad minim veniam,<br>quis nostrud exercitation ullamco<br>laboris nisi ut aliquip ex ea<br>commodo consequat.</p>
+        </div>
+        <div class="direccion">
+          <h3>Invoice to:</h3>
+          <p><strong>JOHN SMITH</strong><br>123 GREEN LAKE ST.<br>CITY STATE<br>COUNTRY</p>
+        </div>
+      </div>
+
+      <div class="tabla-productos">
+        <div class="grid-izquierda head-tabla">
+          <div>#</div>
+          <div>Product Description</div>
+          <div>Price</div>
+        </div>
+        <div class="grid-izquierda"><div>1</div><div>Item 1</div><div>$30.50</div></div>
+        <div class="grid-izquierda"><div>2</div><div>Item 2</div><div>$50.00</div></div>
+        <div class="grid-izquierda"><div>3</div><div>Item 3</div><div>$70.00</div></div>
+        <div class="grid-izquierda"><div>4</div><div>Item 4</div><div>$20.00</div></div>
+      </div>
+
+      <div class=""></div>
+
+      <div class="pie-factura-izq">
+        <div class="etiquetas-totales">
+          <p>Subtotal:</p>
+          <p>Taxes:</p>
+          <p>Shipping:</p>
+          <p>Discount:</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-derecha">
+      <div class="titulo-invoice">
+        <h2>INVOICE</h2>
+      </div>
+
+      <div class="detalles-meta">
+        <div class="meta-item">
+          <label>INVOICE DATE</label>
+          <p>03.02.20</p>
+        </div>
+        <div class="meta-item">
+          <label>DUE DATE</label>
+          <p>03.12.20</p>
+        </div>
+        <div class="meta-item">
+          <label>INVOICE #</label>
+          <p>14256</p>
+        </div>
+      </div>
+
+      <div class="tabla-totales">
+        <div class="grid-derecha head-tabla" style="color: white; border-bottom: 1px solid #4a5154;">
+          <div>Qty</div>
+          <div>Total</div>
+        </div>
+        <div class="grid-derecha"><div>3</div><div>$91.50</div></div>
+        <div class="grid-derecha"><div>1</div><div>$50.00</div></div>
+        <div class="grid-derecha"><div>5</div><div>$350.00</div></div>
+        <div class="grid-derecha"><div>2</div><div>$40.00</div></div>
+      </div>
+
+      <div class="valores-finales">
+        <p>$531.80</p>
+        <p>$63.78</p>
+        <p>$72.00</p>
+        <p>-$15.00</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
